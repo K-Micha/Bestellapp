@@ -1,0 +1,18 @@
+<header>
+
+    <button class="ham_menu" aria-label="Menü öffnen">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div id="modal" class="modal">
+        <div class="modal_content">
+            <button close_modal class="close_btn">X</button>
+            <h2>Test</h2>
+            <p>login</p>
+
+        </div>
+    </div>
+    
+</header>
