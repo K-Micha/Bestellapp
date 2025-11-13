@@ -1,0 +1,89 @@
+/* content and Basket */
+
+.main-content {
+    width: calc(100% - 300px);
+    padding: 16px;
+    border: 2px solid blue;
+}
+
+.basket_right{
+    width: 300px;
+    flex-grow: 1;
+    border: 2px solid red;
+    padding: 16px;
+}
+.basket{
+    width: 100%;
+    height: 400px;
+    background-color: blueviolet;
+    position: sticky;
+    top: 0;
+}
+.content_left{
+    display: flex;
+    font-size: 48px;
+    height: 1500px;
+    width: 100%;
+    background-color: #12345678;
+}
+.main-content{
+    gap: 2px;
+    padding: 2px;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    background-color: aqua;
+}
+
+/* Ham menu */
+      nav
+    {
+        display: flex;
+        padding: 16px;
+    }
+
+    /* off-screen-menu*/
+
+
+    .ham_menu
+    {
+        background-color: #FF8000;
+        width: 40px;
+        margin-left: auto;
+        position: relative;
+        padding: 10px 12px;
+        transition: opacity 125ms ease-out;
+        padding: 18px;
+        border: 0;
+    }
+
+    .ham_menu span
+    {
+        height: 3px;
+        width: 100%;
+        background-color: white;
+        border-radius: 25px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: 125ms ease;
+    }
+
+
+
+    .ham_menu span:nth-child(1)
+    {
+        top: 25%;
+    }
+
+    .ham_menu span:nth-child(3)
+    {
+        top: 75%;
+    }
+
+
+    /* Modal*/
+    .modal{
+        display: none;
+    }
