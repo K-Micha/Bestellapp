@@ -20,8 +20,8 @@
 
 .logo_wrapper{
     position: absolute;
-    top: calc(265px - 40px);
-    left: 30%;
+    top: 230px;
+    place-self: center;
 
 }
 .logo{
@@ -36,9 +36,21 @@ h1{
 }
 h2{
     padding-bottom: 16px;
+    color: black;
+    font-size: 28px;
 }
+    
 h3{
     padding-top: 10px;
+    color: black;
+    font-size: 22px;
+}
+p{
+    color: black;
+    font-size: 19px;
+}
+.price{
+    color: #FF8000 !important;
 }
 .vote{
     padding:24px 0 0 0 ;
