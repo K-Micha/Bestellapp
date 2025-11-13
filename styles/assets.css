@@ -1,3 +1,13 @@
+/* arrow */
+
+.arrow {
+    color: #FF8000;
+    font-weight: bold;
+    font-size: 23px;
+    padding-right: 8px;
+
+}
+
 /* content and Basket */
 
 .main-content {
@@ -21,7 +31,6 @@
 }
 .content_left{
     display: flex;
-    font-size: 48px;
     height: 1500px;
     width: 100%;
     background-color: #12345678;
@@ -29,8 +38,6 @@
 .main-content{
     gap: 2px;
     padding: 2px;
-    display: flex;
-    flex-direction: row;
     flex-grow: 1;
     background-color: aqua;
 }

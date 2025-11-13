@@ -8,3 +8,83 @@
 .app-logo{
     height: 48px;
 }
+.hero{
+    width: 100%;
+}
+.hero_img{
+    width: 100%;
+    height: 200px;
+    object-position: center;
+    object-fit: cover;
+}
+
+.logo_wrapper{
+    position: absolute;
+    top: calc(265px - 40px);
+    left: 30%;
+
+}
+.logo{
+    height: 120px;
+    border-radius: 50%;
+    border: 1px solid gray;
+}
+h1{
+    font-size: 36px;
+    margin-top: 18px;
+    color: black;
+}
+h2{
+    padding-bottom: 16px;
+}
+h3{
+    padding-top: 10px;
+}
+.vote{
+    padding:24px 0 0 0 ;
+    color: #FF8000;
+    font-size: 22px;
+}
+.dishes{
+    padding: 16px 0 16px 0;
+}
+.dishes_label{
+    padding: 8px;
+    background-color: rgb(158 158 158 / 59%);
+}
+.dishes_link{
+    text-decoration: none;
+    color: grey;
+    padding: 8px;
+    font-size: 22px;
+    
+}
+.main_dishes{
+    object-position: 10% 75% !important;
+}
+.dishes_container {
+    border: 1px solid #9E9E9E;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 10px 20px;
+    margin-bottom: 18px;
+    gap: 8px;
+
+}
+.hight_img{
+    height: 110px !important;
+    box-shadow: -3px 1px 4px 1px black;
+    
+}
+.padding_left{
+    padding-left: 16px;
+}
+
+.dishes_btn{
+    position: absolute;
+    place-self: end;
+    color: #FF8000;
+    font-size: 20px;
+    cursor: pointer;
+    
+}
