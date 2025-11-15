@@ -1,7 +1,6 @@
 .header_content{
     background-color: #FF8000;
     display: flex;
-    flex-direction: row-reverse;
     justify-content: space-between;
     padding: 20px;
 }
