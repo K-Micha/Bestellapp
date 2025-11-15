@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,83 +8,112 @@
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/basic.css">
     <link rel="stylesheet" href="./styles/assets.css">
-   <script src="./scripts/script.js" defer ></script>
-   <script src="./scripts/header_footer.js" defer ></script>
+    <script src="./scripts/menu.js" defer></script>
+    <script src="./scripts/script.js" defer></script>
+    <script src="./scripts/header_footer.js" defer></script>
     <title>Bestellapp</title>
 </head>
 
 <body>
     <header class="header_content">
-    <div id="header_content"></div>
-    <img class="app-logo" src="/assets/logo/Bestell-App-Logo.svg" alt="Das Logo der Bestell App">
+        <div id="header_content"></div>
+        <img class="app-logo" src="/assets/logo/Bestell-App-Logo.svg" alt="Das Logo der Bestell App">
     </header>
     <main>
-        <div class="content_left" >
-            <section class="main-content" >
+        <div class="content_left">
+            <section class="main-content">
                 <div class="hero">
-                <div>
-                    <img class="hero_img" src="/assets/bilder/istockphoto-1143191956-612x612.jpg" alt="Resturant bild">
-                </div>
-                
-                <div class="logo_wrapper">
-                    <img class="logo" src="./assets/bilder/togo.png" alt="">
-                </div>
+                    <div>
+                        <img class="hero_img" src="/assets/bilder/istockphoto-1143191956-612x612.jpg"
+                            alt="Resturant bild">
+                    </div>
+
+                    <div class="logo_wrapper">
+                        <img class="logo" src="./assets/bilder/togo.png" alt="">
+                    </div>
                 </div>
                 <div class="padding_left">
-                <h1>Tajine House</h1>
-                <p class="vote">Bewertung</p>
+                    <h1>Tajine House</h1>
+                    <p class="vote">Bewertung</p>
 
-                <section class="dishes">
-                    <div class="dishes_label">
-                       <span class="arrow">></span>
-                       <a class="dishes_link" href="#">Hauptgericht</a>
-                       <a class="dishes_link" href="#">Beilagen</a>
-                       <a class="dishes_link" href="#">Getränke</a>
+                    <section class="dishes">
+                        <div class="dishes_label">
+                            <span class="arrow">></span>
+                            <a class="dishes_link"  data-target="main_scroll">Hauptgericht</a>
+                            <a class="dishes_link"  data-target="dishes_scroll">Beilagen</a>
+                            <a class="dishes_link"  data-target="drink_scroll">Getränke</a>
 
-                    </div>
-                </section>
+                        </div>
+                    </section>
 
-                <section>
-                     <img class="hero_img main_dishes hight_img" src="/assets/bilder/istockphoto-1143191956-612x612.jpg" alt="Bild vom Hauptgericht">
-                    <h2>Hauptgericht</h2>
+                    <section>
+                        <img class="hero_img main_dishes hight_img"
+                            src="/assets/bilder/istockphoto-1143191956-612x612.jpg" alt="Bild vom Hauptgericht">
+                        <h2 id="main_scroll">Hauptgericht</h2>
 
-                    <div class="dishes_container" id="main_dishes">
-                    <button class="dishes_btn" id="buy_btn">+</button>
-                    <h3 id="dishes_name" >Name</h3>
-                    <p id="Description" >Beschreibung</p>
-                    <p id="dish_price"  class="price">9</p>
-                
-                    </div>
-                </section>
+                        <div  id="main_dishes">
 
-                <section>
-                     <img class="hero_img hight_img" src="/assets/bilder/harira.webp" alt="Bild von Beilage">
-                    <h2>Beilagen</h2>
-                    <div class="dishes_container" id="slide_dishes">
-                    <button class="dishes_btn" id="buy_btn">+</button>
-                    <h3 id="dishes_name" >Name</h3>
-                    <p id="Description" >Beschreibung</p>
-                    <p id="dish_price"  class="price">9</p>
+                            <button class="dishes_btn icon_btn" id="buy_btn">+</button>
+                            <h3 id="dishes_name">Name</h3>
+                            <p id="Description">Beschreibung</p>
+                            <p id="dish_price" class="price">9</p>
 
-                    </div>
-                </section>
+                        </div>
+                    </section>
 
-                <section>
-                     <img class="hero_img hight_img" src="/assets/bilder/tee.avif" alt="Bild vom Getrenk">
-                    <h2>Getränke</h2>
-                    <div class="dishes_container" id="drinks">
-                        <button class="dishes_btn" id="buy_btn">+</button>
-                       <h3 id="dishes_name" >Name</h3>
-                       <p id="Description" >Beschreibung</p>
-                        <p id="dish_price" class="price">9</p>
-                        
-                    </div>
-                </section>
-            </div>
+                    <section>
+                        <img class="hero_img hight_img" src="/assets/bilder/harira.webp" alt="Bild von Beilage">
+                        <h2 id="dishes_scroll">Beilagen</h2>
+                        <div id="slide_dishes">
+                           
+
+                        </div>
+                    </section>
+
+                    <section>
+                        <img class="hero_img hight_img" src="/assets/bilder/tee.avif" alt="Bild vom Getrenk">
+                        <h2 id="drink_scroll">Getränke</h2>
+                        <div  id="drinks">
+                         
+                        </div>
+                    </section>
+                </div>
             </section>
-            <section class="basket_right" >
-                <div class="basket" >
-                    .....
+            <section class="basket_right">
+                <div class="basket">
+                    <div class="order-group">
+                        <button class="order-btn active order_left" id="btn-lieferung">Lieferung</button>
+                        <button class="order-btn order_right" id="btn-abholung">Abholung</button>
+                    </div>
+
+                    <section id="warenkorb" class="cart">
+                        <h2> Warenkorb </h2>
+                        <div class="line"></div>
+
+                        <div class="cart-items">
+                            <p id="item_name" class="item_name">Pizza</p>
+                            <div class="cart-controls">
+                                <button class="minus orange icon_btn" id="item1-minus">−</button>
+                                <span id="item1-qty">3</span>
+                                <button class="plus orange icon_btn" id="item1-plus">+</button>
+                                <p id="item1-sum" class="item-sum">25,50€</p>
+                                <button class="remove orange icon_btn" id="item1-remove">🗑️</button>
+                            </div>
+
+
+                        </div>
+                        <div class="line"></div>
+                        <div class="cart-summary">
+                            <p id="subtotal"></p>
+                            <p id="subtotal_summe"></p>
+                            <p id="delivery"></p>
+                            <p id="delivery_summe"></p>
+                            <p id="total"><strong></strong></p>
+                            <p id="total_summe"><strong></strong></p>
+
+                        </div>
+
+                    </section>
                 </div>
             </section>
 
