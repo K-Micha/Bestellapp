@@ -14,3 +14,11 @@
     border: 2px solide;
     
 }
+body{
+    max-width: 1940px;
+    
+}
+main{
+    min-height: calc(100vh - 80px- 100px);
+}
+

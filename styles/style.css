@@ -84,6 +84,7 @@ p{
     gap: 8px;
 
 }
+
 .hight_img{
     height: 110px !important;
     box-shadow: -3px 1px 4px 1px black;
@@ -112,6 +113,7 @@ p{
     height: 1px;
     margin-top: 16px;
 }
+
 .cart-items{
 text-align: start;
 
@@ -119,6 +121,7 @@ text-align: start;
 .item_name{
     padding: 16px;
 }
+
 
 .cart-controls{
     display: flex;
@@ -132,4 +135,8 @@ text-align: start;
     line-height: 1;
     border: none;
     border-radius: 2px;
+    margin-bottom: 8px;
+}
+footer{
+    margin-top: auto;
 }

@@ -18,19 +18,17 @@
 .basket_right{
     width: 300px;
     flex-grow: 1;
-    border: 2px solid red;
     padding: 16px;
 }
 .basket{
     width: 100%;
     height: 400px;
-    background-color: blueviolet;
     position: sticky;
     top: 0;
 }
 .content_left{
     display: flex;
-    height: 1500px;
+    height: 100%;
     width: 100%;
 }
 .main-content{
@@ -149,14 +147,16 @@ nav a{
   background-color: #eee;
   cursor: pointer;
   transition: all 0.2s ease;
+  color: black;
 }
 
 .order-btn.active {
-  background-color: #2a9d8f;
-  color: white;
+  background-color: #FF8000;
+  color: #FF8000;
   font-weight: bold;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
+
 .order_left{
     border-radius: 6px 0 0 6px;
 }
