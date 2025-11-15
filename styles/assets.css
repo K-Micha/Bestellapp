@@ -87,11 +87,54 @@
     }
 
 
-    /* Modal*/
-    .modal{
-        display: none;
-    }
+    /* aside*/
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    z-index: 2;
 
+}
+.side_menu {
+    position: fixed;
+    top: 0;
+    right: -260px;
+    height: 100%;
+    background-color: #7e410d;
+    transition: right 0.3s ease;
+    padding: 20px;
+}
+.side_menu.show {
+    right: 0;
+    z-index: 2;
+    position: fixed;
+}
+
+.overlay.show {
+    display: block;
+    
+}
+.close_menu {
+    background-color: #7e410d;
+    font-size: 22px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    border: 0;
+    
+}
+nav{
+    display: flex;
+    padding: 16px;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    font-size: 28px;
+    padding-top: 80px;
+}
+nav a{
+    color: white;
+}
     /* order btn */
 
 .order-group {

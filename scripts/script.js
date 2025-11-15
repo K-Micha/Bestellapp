@@ -25,4 +25,25 @@ document.querySelectorAll(".dishes_link").forEach(link => {
 
 });
 
-// Nav Modal
+// Nav Aside
+const sideMenu = document.getElementById("side_menu");
+
+
+document.addEventListener("click", (e) => {
+    const burger    = e.target.closest(".ham_menu");
+    const closeMenu = e.target.closest(".close_menu");
+    const clickOverlay = e.target === overlay;
+    const menuLink = e.target.closest(".close");
+
+    // öffnen
+    if (burger) {
+        sideMenu.classList.add("show");
+        overlay.classList.add("show");
+    }
+
+    // schließen
+    if (closeMenu || clickOverlay ||menuLink) {
+        sideMenu.classList.remove("show");
+        overlay.classList.remove("show");
+    }
+});

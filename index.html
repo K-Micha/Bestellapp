@@ -15,10 +15,22 @@
 </head>
 
 <body>
-   
+<div id="overlay" class="overlay"></div>
+
+<aside id="side_menu" class="side_menu">
+    <button class="close_menu">X</button>
+
+    <nav class="menu_nav">
+        <a href="#" class="close">Login</a>
+        <a href="#main_dishes" class="close">Hauptgerichte</a>
+        <a href="#dishes_scroll" class="close">Beilagen</a>
+        <a href="#drink_scroll" class="close">Getränke</a>
+        
+    </nav>
+</aside>
         <div id="header_content"></div>
         <img class="app-logo" src="/assets/logo/Bestell-App-Logo.svg" alt="Das Logo der Bestell App">
-        
+
     <main>
         <div class="content_left">
             <section class="main-content">
@@ -39,8 +51,8 @@
                     <section class="dishes">
                         <div class="dishes_label">
                             <span class="arrow">></span>
-                            <a class="dishes_link"  data-target="main_scroll">Hauptgericht</a>
-                            <a class="dishes_link"  data-target="dishes_scroll">Beilagen</a>
+                            <a class="dishes_link"  data-target="main_dishes">Hauptgericht</a>
+                            <a class="dishes_link"  data-target="slide_dishes">Beilagen</a>
                             <a class="dishes_link"  data-target="drink_scroll">Getränke</a>
 
                         </div>
