@@ -35,7 +35,7 @@
 }
 .main-content{
     gap: 2px;
-    padding: 2px;
+    padding: 0;
     flex-grow: 1;
 }
 
@@ -91,3 +91,32 @@
     .modal{
         display: none;
     }
+
+    /* order btn */
+
+.order-group {
+    padding-top: 8px;
+  display: flex;
+  justify-content: center;
+}
+
+.order-btn {
+  padding: 10px 20px;
+  border: none;
+  background-color: #eee;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.order-btn.active {
+  background-color: #2a9d8f;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.order_left{
+    border-radius: 6px 0 0 6px;
+}
+.order_right{
+    border-radius: 0 6px 6px 0;
+}
