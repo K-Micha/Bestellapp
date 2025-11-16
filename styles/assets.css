@@ -154,6 +154,11 @@ nav a{
 
 .btn{
     box-shadow: 1px 1px 7px 1px #9E9E9E; 
+    color: black;
+    font-size: 18px;
+    font-size: 18px;
+    border-radius: 10px;
+    margin-left: 30%;
 }
 
 .order-btn.active {
