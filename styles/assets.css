@@ -152,6 +152,10 @@ nav a{
   color: black;
 }
 
+.btn{
+    box-shadow: 1px 1px 7px 1px #9E9E9E; 
+}
+
 .order-btn.active {
   background-color: #FF8000;
   color: #FF8000;

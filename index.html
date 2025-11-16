@@ -5,18 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/Icons/favicon.ico" />
-    <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/basic.css">
-    <link rel="stylesheet" href="./styles/assets.css">
-    <link rel="stylesheet" href="./styles/hover.css">
-    <script src="./scripts/menu.js" defer></script>
-    <script src="./scripts/script.js" defer></script>
-    <script src="./scripts/header_footer.js" defer></script>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/basic.css">
+    <link rel="stylesheet" href="/styles/assets.css">
+    <link rel="stylesheet" href="/styles/hover.css">
+    <link rel="stylesheet" href="/styles/media.css">
+    <script src="/scripts/menu.js" defer></script>
+    <script src="/scripts/script.js" defer></script>
+    <script src="/scripts/header_footer.js" defer></script>
     <title>Bestellapp</title>
 </head>
 
 <body>
-    <div id="overlay" class="overlay"></div>
+ 
+    <div id="header_content"></div>
+    <img class="app-logo" src="/assets/logo/Bestell-App-Logo.svg" alt="Das Logo der Bestell App">
+
+        <div id="overlay" class="overlay"></div>
 
     <aside id="side_menu" class="side_menu">
         <button class="close_menu">X</button>
@@ -29,8 +34,6 @@
 
         </nav>
     </aside>
-    <div id="header_content"></div>
-    <img class="app-logo" src="/assets/logo/Bestell-App-Logo.svg" alt="Das Logo der Bestell App">
 
     <main>
         
@@ -90,7 +93,10 @@
                     </section>
                 </div>
             </section>
-
+            <div id="basket_wrapper">
+                <div class="btn_order">
+        <button id="mobile_cart_btn" class="mobile_cart_btn btn">Warenkorb</button>
+        </div>
             <section class="basket_right">
                 <div class="basket">
                     <div class="order-group">
@@ -124,11 +130,13 @@
                             <p id="total_summe"><strong></strong></p>
 
                         </div>
-
+                        <button class=" btn">Bestellen</button>
                     </section>
                 </div>
             </section>
-        
+        </div>
+        </div>
+    
     </main>
     <div id="footer_content"></div>
 </body>

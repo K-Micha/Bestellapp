@@ -63,7 +63,7 @@ function renderCategory(list, containerId) {
     container.innerHTML = "";
 
     list.forEach(dish => {
-        const card = document.createElement("div");
+        const card = document.createElement("article");
         card.classList.add("dishes_container");
 // Karte einfügen
         card.innerHTML = `
