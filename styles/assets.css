@@ -57,6 +57,7 @@
         transition: opacity 125ms ease-out;
         padding: 18px;
         border: 0;
+        cursor: pointer;
     }
 
     .ham_menu span
@@ -132,6 +133,7 @@ nav{
 }
 nav a{
     color: white;
+    text-decoration: none;
 }
     /* order btn */
 
@@ -154,12 +156,15 @@ nav a{
   background-color: #FF8000;
   color: #FF8000;
   font-weight: bold;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+ box-shadow: 1px 1px 7px 1px #9E9E9E;
+ cursor: context-menu;
 }
 
 .order_left{
     border-radius: 6px 0 0 6px;
+    box-shadow: 1px 1px 7px 1px #9E9E9E;
 }
 .order_right{
     border-radius: 0 6px 6px 0;
+    box-shadow: 1px 1px 7px 1px #9E9E9E;
 }

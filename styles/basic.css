@@ -21,4 +21,8 @@ body{
 main{
     min-height: calc(100vh - 80px- 100px);
 }
-
+footer a,p{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}

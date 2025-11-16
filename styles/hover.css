@@ -1,4 +1,57 @@
 @media (min-width: 940px){
 
+button:hover {
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+     transform: scale(1.05);
+    box-shadow: 0 4px 8px rgb(255,128,0);
 
+}
+.dishes_link:hover{
+        letter-spacing: 1px;
+    transition: all 0.3s ease;
+     transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+nav a:hover{
+    text-shadow: 3px -2px 4px #141414ab;
+        letter-spacing: 1px;
+    transition: all 0.3s ease;
+     transform: scale(1.01);
+}
+.app-logo:hover{
+  transform: scale(1.1);
+
+}
+.ham_menu:hover{
+    transform: scale(1.3);
+}
+.link_footer:hover{
+      letter-spacing: 1px;
+    transition: all 0.3s ease;
+     transform: scale(1.05);
+    text-shadow: 3px -2px 4px #141414ab;
+}
+}
+
+@media (min-width: 320px){
+    .app-logo:active{
+        transform: scale(0.8);
+    }
+    button:active{
+        transform: scale(0.8);
+    }
+    .order-btn:active{
+        transform: scale(1.0) !important;
+    }
+    .ham_menu:hover:active{
+        transform: scale(0.8);
+    }
+    nav a:active{
+         transform: scale(0.8);
+    }
+    .link_footer:active{
+        transform: scale(0.8);
+    }
+  
 }

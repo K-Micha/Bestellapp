@@ -84,6 +84,9 @@ p{
     gap: 8px;
 
 }
+.dishes_container p{
+    color: black;
+}
 
 .hight_img{
     height: 110px !important;
@@ -120,6 +123,7 @@ text-align: start;
 }
 .item_name{
     padding: 16px;
+    color: black;
 }
 
 
@@ -136,7 +140,9 @@ text-align: start;
     border: none;
     border-radius: 2px;
     margin-bottom: 8px;
+    cursor: pointer;
 }
+
 footer{
     margin-top: auto;
     background-color: #FF8000;

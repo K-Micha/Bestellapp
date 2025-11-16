@@ -2,7 +2,7 @@
 const buttons = document.querySelectorAll('.order-btn');
 buttons.forEach(btn => {
   btn.addEventListener('click', () => {
-    buttons.forEach(b => b.classList.remove('active'));
+    buttons.forEach(button => button.classList.remove('active'));
     btn.classList.add('active');
     console.log("Aktiver Modus:", btn.textContent);
     
