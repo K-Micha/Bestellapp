@@ -1,59 +1,77 @@
-@media (max-width: 650px){
+@media (max-width: 650px) {
     .content_left {
-  display: flex;
-  flex-direction: column !important;
-  width: auto;
-}
+        display: flex;
+        flex-direction: column !important;
+        width: auto;
+    }
 
-.main-content{
-    width: auto;
-}
-.basket{
-    height: auto;
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-     top: 120vh;
-}
-.basket.show{
-     top: 60vh;
-}
-.cart{
-    background-color: white;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    transform: scale(1.2);
-    border-radius: 20px;
-    box-shadow: 1px 1px 7px 1px black;
-}
-.btn {
-    padding: 15px;
-    box-shadow: 1px 1px 4px 1px black;
-    border-radius: 29px;
-    color: black;
-}
-footer{
-    display: flex;
-    flex-direction: column;
-}
-.mobile_cart_btn{
-    display: block;
-    
-}
-.btn_order{
-      left: 40%;
-        top: 80vh;
+    .main-content {
+        width: auto;
+    }
+
+    .basket {
+        height: auto;
         position: fixed;
-}
-.hero_img {
-    height: 100px !important;
-}
-.hight_img{
-    height: 70px !important;
-}
-.order-btn{
-    z-index: 2;
-}
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: 120vh;
+    }
+
+    .basket.show {
+        top: 60vh;
+    }
+
+    .cart {
+        background-color: white;
+        padding: 10px;
+        border: 2px solid grey;
+        overflow: auto;
+        max-height: 300px;
+        width: 300px;
+    }
+
+    .btn {
+        padding: 15px;
+        box-shadow: 1px 1px 4px 1px black;
+        border-radius: 29px;
+        color: black;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobile_cart_btn {
+        display: block;
+
+    }
+
+    .btn_order {
+        position: fixed;
+        top: 80vh;
+    }
+
+    .hero_img {
+        height: 100px !important;
+    }
+
+    .hight_img {
+        height: 70px !important;
+    }
+
+    .order-btn {
+        z-index: 2;
+    }
+
+    .logo_wrapper {
+        top: auto;
+    }
+
+    .mobile_cart_btn {
+        display: flex;
+        align-items: center;
+        position: fixed;
+    }
 }

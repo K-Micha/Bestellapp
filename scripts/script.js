@@ -1,12 +1,12 @@
 // abholung o. lieferung
 const buttons = document.querySelectorAll('.order-btn');
 buttons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    buttons.forEach(button => button.classList.remove('active'));
-    btn.classList.add('active');
-    console.log("Aktiver Modus:", btn.textContent);
-    
-  });
+    btn.addEventListener('click', () => {
+        buttons.forEach(button => button.classList.remove('active'));
+        btn.classList.add('active');
+        console.log("Aktiver Modus:", btn.textContent);
+
+    });
 });
 
 // scrollen 
@@ -31,7 +31,7 @@ const sideMenu = document.getElementById("side_menu");
 
 
 document.addEventListener("click", (e) => {
-    const burger    = e.target.closest(".ham_menu");
+    const burger = e.target.closest(".ham_menu");
     const closeMenu = e.target.closest(".close_menu");
     const clickOverlay = e.target === overlay;
     const menuLink = e.target.closest(".close");
@@ -43,13 +43,13 @@ document.addEventListener("click", (e) => {
     }
 
     // schließen
-    if (closeMenu || clickOverlay ||menuLink) {
+    if (closeMenu || clickOverlay || menuLink) {
         sideMenu.classList.remove("show");
         overlay.classList.remove("show");
     }
 });
 
-// Warenkorb
+// mobil Warenkorb
 
 const mobileBtn = document.getElementById("mobile_cart_btn");
 const basket = document.querySelector(".basket");
@@ -60,10 +60,10 @@ mobileBtn.addEventListener("click", () => {
 
 document.addEventListener("click", (e) => {
 
-   
+
     if (e.target.classList.contains("basket")) return;
 
-    
+
     if (!basket.contains(e.target) && e.target !== mobileBtn) {
         basket.classList.remove("show");
     }

@@ -1,27 +1,33 @@
-*{
+* {
     color: white;
     box-sizing: border-box;
     margin: 0;
     scroll-behavior: smooth;
 }
-::-webkit-scrollbar-thumb{
+
+::-webkit-scrollbar-thumb {
     background-color: orange;
     border-radius: 10px;
     border: 1px solid #0a193c;
 }
-::-webkit-scrollbar{
+
+::-webkit-scrollbar {
     background-color: white;
     border: 2px solide;
-    
+
 }
-body{
+
+body {
     max-width: 1940px;
-    
+
 }
-main{
+
+main {
     min-height: calc(100vh - 80px- 100px);
 }
-footer a,p{
+
+footer a,
+p {
     text-decoration: none;
     color: white;
     font-size: 18px;

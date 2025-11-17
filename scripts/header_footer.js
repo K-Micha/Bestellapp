@@ -5,7 +5,7 @@ fetch("/html/header.html")
 
     fetch("/html/footer.html")
       .then((response) => response.text())
-     .then((data) => {
-         document.getElementById("footer_content").innerHTML = data;
-         });
+      .then((data) => {
+        document.getElementById("footer_content").innerHTML = data;
+      });
   });
