@@ -57,39 +57,11 @@ const data = {
   ]
 };
 
-
-function renderCategory(list, containerId) {
-  const container = document.getElementById(containerId);
-  container.innerHTML = "";
-
-  list.forEach(dish => {
-    const card = document.createElement("article");
-    card.classList.add("dishes_container");
-
-
-    card.innerHTML = `
-            <button class="dishes_btn icon_btn" data-id="${dish.id}">+</button>
-            <h3>${dish.name}</h3>
-            <p>${dish.description}</p>
-            <p class="price">${dish.price.toFixed(2)} €</p>
-        `;
-
-    container.appendChild(card);
-  });
-}
-
-// Rendern alle Kategorien
-renderCategory(data.mainDishes, "main_dishes");
-renderCategory(data.slideDishes, "slide_dishes");
-renderCategory(data.drinks, "drinks");
-
-
-//warenkrob 
-
+// Warenkorb
 let cart = [];
+let deliveryCost = 3.50;
 
 
-// Gericht anhand ID finden
 function getDish(id) {
   return (
     data.mainDishes.find(d => d.id === id) ||
@@ -99,165 +71,134 @@ function getDish(id) {
 }
 
 
-// add items
+function renderCategory(list, containerId) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = "";
+
+  list.forEach(dish => {
+    const card = document.createElement("article");
+    card.classList.add("dishes_container");
+
+    card.innerHTML = `
+      <button onclick="addItem('${dish.id}')" class="dishes_btn icon_btn">+</button>
+      <h3>${dish.name}</h3>
+      <p>${dish.description}</p>
+      <p class="price">${dish.price.toFixed(2)} €</p>
+    `;
+
+    container.appendChild(card);
+  });
+}
+
+
+renderCategory(data.mainDishes, "main_dishes");
+renderCategory(data.slideDishes, "slide_dishes");
+renderCategory(data.drinks, "drinks");
+
+// item hinzufügen
 function addItem(id) {
   const dish = getDish(id);
   if (!dish) return;
 
   let item = cart.find(i => i.id === id);
-
   if (item) {
     item.qty++;
   } else {
-    cart.push({
-      id: dish.id,
-      name: dish.name,
-      price: dish.price,
-      qty: 1
-    });
+    cart.push({ id: dish.id, name: dish.name, price: dish.price, qty: 1 });
   }
-
   renderCart();
 }
 
 
-// remote items
 function removeItem(id) {
   let item = cart.find(i => i.id === id);
   if (!item) return;
 
   item.qty--;
-
-  if (item.qty <= 0) {
-    cart = cart.filter(i => i.id !== id);
-  }
-
+  if (item.qty <= 0) cart = cart.filter(i => i.id !== id);
   renderCart();
 }
+
+
 function deleteItem(id) {
   cart = cart.filter(i => i.id !== id);
   renderCart();
-  renderSummary();
 }
 
 
-
-
-// summe
 function renderCart() {
   const itemsBox = document.querySelector(".cart-items");
-  const summaryBox = document.querySelector(".cart-summary");
-
-
   itemsBox.innerHTML = "";
 
-
-  if (cart.length === 0) {
-    summaryBox.classList.add("hidden");
-    return;
-  }
-
-
-  summaryBox.classList.remove("hidden");
-
-  // artikel
   cart.forEach(item => {
-    itemsBox.innerHTML += `
-            <div class="cart-line">
-                <p class="item_name">${item.name}</p>
+    const line = document.createElement("article");
+    line.classList.add("cart-line");
 
-                <div class="cart-controls">
-                    <button onclick="removeItem('${item.id}')" class="minus orange">−</button>
-                    <span>${item.qty}</span>
-                    <button onclick="addItem('${item.id}')" class="plus orange">+</button>
+    line.innerHTML = `
+      <p class="item_name">${item.name}</p>
+      <div class="cart-controls">
+        <button onclick="removeItem('${item.id}')" class="minus orange">−</button>
+        <span>${item.qty}</span>
+        <button onclick="addItem('${item.id}')" class="plus orange">+</button>
+        <p class="item-sum">${(item.qty * item.price).toFixed(2)} €</p>
+        <button onclick="deleteItem('${item.id}')" class="remove orange">🗑️</button>
+      </div>
+      <div class="line"></div>
+    `;
 
-                    <p class="item-sum">${(item.qty * item.price).toFixed(2)} €</p>
-                    <button onclick="deleteItem('${item.id}')" class="remove orange">🗑️</button>
-                </div>
-
-                <div class="line"></div>
-            </div>
-        `;
+    itemsBox.appendChild(line);
   });
 
+  renderSummary();
+}
+
+// lieferung
+function setDelivery(isDelivery) {
+  deliveryCost = isDelivery ? 3.50 : 0;
+
+  const btnLieferung = document.getElementById("btn-lieferung");
+  const btnAbholung = document.getElementById("btn-abholung");
+
+  if (!btnLieferung || !btnAbholung) return;
+
+  btnLieferung.classList.toggle("active", isDelivery);
+  btnAbholung.classList.toggle("active", !isDelivery);
 
   renderSummary();
 }
 
 
-
-let deliveryCost = 3.50;
-
-document.getElementById("btn-lieferung").addEventListener("click", () => {
-  deliveryCost = 3.50;
-  document.getElementById("btn-lieferung").classList.add("active");
-  document.getElementById("btn-abholung").classList.remove("active");
-  renderSummary();
-});
-
-document.getElementById("btn-abholung").addEventListener("click", () => {
-  deliveryCost = 0;
-  document.getElementById("btn-abholung").classList.add("active");
-  document.getElementById("btn-lieferung").classList.remove("active");
-  renderSummary();
-});
-
-
-// summe berechen
 function renderSummary() {
   const subtotal = cart.reduce((sum, item) => sum + item.qty * item.price, 0);
-
   document.getElementById("subtotal_summe").textContent = `${subtotal.toFixed(2)} €`;
   document.getElementById("delivery_summe").textContent = `${deliveryCost.toFixed(2)} €`;
   document.getElementById("total_summe").textContent = `${(subtotal + deliveryCost).toFixed(2)} €`;
 }
 
+// order
+function finalizeOrder() {
+  const message = document.getElementById("order_message");
+  if (!message) return;
 
-//button
-document.addEventListener("click", (e) => {
-  const btn = e.target.closest(".dishes_btn");
-  if (!btn) return;
+  message.style.display = "block";
 
-  addItem(btn.dataset.id);
-});
+  if (cart.length === 0) {
+    message.textContent = "Der Warenkorb ist leer.";
+    message.style.color = "#c0392b";
+  } else {
+    message.textContent = "Bestellung erfolgreich!";
+    message.style.color = "#27ae60";
+    resetCart();
+  }
+
+  setTimeout(() => {
+    message.textContent = "";
+    message.style.display = "none";
+  }, 2000);
+}
 
 
 function resetCart() {
   cart = [];
   renderCart();
-  renderSummary();
-
 }
-const orderBtn = document.querySelector(".cart .btn");
-
-orderBtn.addEventListener("click", () => {
-  const message = document.getElementById("order_message");
-
-
-  if (!message) return;
-
-  //  leer
-  if (cart.length === 0) {
-    message.textContent = "Der Warenkorb ist leer.";
-    message.style.color = "#c0392b"; // rot
-    message.classList.add("show_2");
-
-    setTimeout(() => {
-      message.classList.remove("show_2");
-      message.textContent = "";
-    }, 2000);
-    return;
-  }
-
-  //  erfolgreich
-  message.textContent = "Bestellung erfolgreich!";
-  message.style.color = "#27ae60"; // grün
-  message.classList.add("show_2");
-
-  setTimeout(() => {
-    message.classList.remove("show_2");
-    message.textContent = "";
-  }, 2000);
-
-  resetCart();
-});

@@ -1,70 +1,59 @@
-// abholung o. lieferung
-const buttons = document.querySelectorAll('.order-btn');
-buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-        buttons.forEach(button => button.classList.remove('active'));
-        btn.classList.add('active');
-        console.log("Aktiver Modus:", btn.textContent);
+// Abholung oder Lieferung
+function setOrderMode(btn) {
+    document.querySelectorAll('.order-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    console.log("Aktiver Modus:", btn.textContent);
+}
 
-    });
-});
+// Scrollen zu Gerichten
+function scrollToTarget(id) {
+    const target = document.getElementById(id);
+    if (target) target.scrollIntoView({ behavior: "smooth" });
+}
 
-// scrollen 
-document.querySelectorAll(".dishes_link").forEach(link => {
+// Burger Menü
+function openMenu() {
+    document.getElementById("side_menu").classList.add("show");
+    document.getElementById("overlay").classList.add("show");
+}
 
-    link.addEventListener("click", (e) => {
-        e.preventDefault();
+function closeMenu() {
+    document.getElementById("side_menu").classList.remove("show");
+    document.getElementById("overlay").classList.remove("show");
+}
 
-        const targetId = link.dataset.target;
-        const target = document.getElementById(targetId);
-
-        if (target) {
-            target.scrollIntoView({ behavior: "smooth" });
-        }
-    });
-
-});
-
-// Nav Aside
-
-const sideMenu = document.getElementById("side_menu");
-
-
-document.addEventListener("click", (e) => {
-    const burger = e.target.closest(".ham_menu");
-    const closeMenu = e.target.closest(".close_menu");
-    const clickOverlay = e.target === overlay;
-    const menuLink = e.target.closest(".close");
-
-    // öffnen
-    if (burger) {
-        sideMenu.classList.add("show");
-        overlay.classList.add("show");
-    }
-
-    // schließen
-    if (closeMenu || clickOverlay || menuLink) {
-        sideMenu.classList.remove("show");
-        overlay.classList.remove("show");
-    }
-});
-
-// mobil Warenkorb
-
+// Mobiler Warenkorb
+function toggleCart() {
+    const basket = document.querySelector(".basket");
+    basket.classList.toggle("show");
+}
 const mobileBtn = document.getElementById("mobile_cart_btn");
 const basket = document.querySelector(".basket");
+const closeBtn = document.getElementById("close_cart");
 
-mobileBtn.addEventListener("click", () => {
+mobileBtn.onclick = function () {
     basket.classList.add("show");
-});
+};
+closeBtn.onclick = function () {
+    basket.classList.remove("show");
+};
+document.onclick = function (e) {
 
-document.addEventListener("click", (e) => {
-
-
-    if (e.target.classList.contains("basket")) return;
-
-
-    if (!basket.contains(e.target) && e.target !== mobileBtn) {
-        basket.classList.remove("show");
+    if (basket.contains(e.target)) {
+        return;
     }
-});
+
+    if (e.target === mobileBtn) {
+        return;
+    }
+
+    if (
+        e.target.classList.contains("plus") ||
+        e.target.classList.contains("minus") ||
+        e.target.classList.contains("remove")
+    ) {
+        return;
+    }
+
+    basket.classList.remove("show");
+};

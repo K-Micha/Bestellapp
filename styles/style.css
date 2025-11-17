@@ -210,20 +210,25 @@ strong {
 }
 
 .order_message {
-    margin-top: 10px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    text-align: center;
-    height: 20px;
-    /* Platz reserviert */
+  display: none;        
+  font-weight: bold;
+  margin-top: 10px;
+  transition: opacity 0.3s ease;
 }
 
-.order_message.show {
-    opacity: 1;
+.order_message.show_2 {
+  display: block;       
+  opacity: 1;
 }
+
 .show_2{
     margin-top: 20px;
     text-align: center;
+}
+.close_cart{
+    display: none;
+}
+.cart{
+    position: fixed;
+    margin-left: 40px;
 }

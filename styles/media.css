@@ -19,7 +19,7 @@
     }
 
     .basket.show {
-        top: 60vh;
+        top: 0;
     }
 
     .cart {
@@ -27,10 +27,14 @@
         padding: 10px;
         border: 2px solid grey;
         overflow: auto;
-        max-height: 300px;
-        width: 300px;
+        width: 100%;
+        margin-left: -20px;
+        margin-right: 10px;
+        height: 100vh;
     }
-
+    h2{
+        margin-top: 100px;
+    }
     .btn {
         padding: 15px;
         box-shadow: 1px 1px 4px 1px black;
@@ -74,4 +78,19 @@
         align-items: center;
         position: fixed;
     }
+    .logo{
+        height: 60px;
+    }
+
+.close_cart{
+    z-index: 1;
+    display: block;
+    margin-right: 30px;
+}
+.order-group{
+    margin-top: 40px;
+}
+.order_message{
+    text-align: center;
+}
 }
