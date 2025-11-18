@@ -79,12 +79,18 @@ function renderCategory(list, containerId) {
     const card = document.createElement("article");
     card.classList.add("dishes_container");
 
-    card.innerHTML = `
-      <button onclick="addItem('${dish.id}')" class="dishes_btn icon_btn">+</button>
-      <h3>${dish.name}</h3>
-      <p>${dish.description}</p>
-      <p class="price">${dish.price.toFixed(2)} €</p>
-    `;
+ card.innerHTML = `
+  <button onclick="
+    addItem('${dish.id}');
+    updateMenuButtons();
+  " class="dishes_btn icon_btn">+
+  </button>
+  <h3>${dish.name}</h3>
+  <p>${dish.description}</p>
+  <p class='price'>${dish.price.toFixed(2)} €</p>
+`;
+
+
 
     container.appendChild(card);
   });
@@ -94,6 +100,7 @@ function renderCategory(list, containerId) {
 renderCategory(data.mainDishes, "main_dishes");
 renderCategory(data.slideDishes, "slide_dishes");
 renderCategory(data.drinks, "drinks");
+
 
 // item hinzufügen
 function addItem(id) {
@@ -106,7 +113,11 @@ function addItem(id) {
   } else {
     cart.push({ id: dish.id, name: dish.name, price: dish.price, qty: 1 });
   }
+  
   renderCart();
+  updateMenuButtons();
+
+
 }
 
 
@@ -117,12 +128,16 @@ function removeItem(id) {
   item.qty--;
   if (item.qty <= 0) cart = cart.filter(i => i.id !== id);
   renderCart();
+  updateMenuButtons();
+
 }
 
 
 function deleteItem(id) {
   cart = cart.filter(i => i.id !== id);
   renderCart();
+  updateMenuButtons();
+
 }
 
 
@@ -137,20 +152,35 @@ function renderCart() {
     line.innerHTML = `
       <p class="item_name">${item.name}</p>
       <div class="cart-controls">
+
         <button onclick="removeItem('${item.id}')" class="minus orange">−</button>
+        
         <span>${item.qty}</span>
         <button onclick="addItem('${item.id}')" class="plus orange">+</button>
+        
         <p class="item-sum">${(item.qty * item.price).toFixed(2)} €</p>
         <button onclick="deleteItem('${item.id}')" class="remove orange">🗑️</button>
       </div>
       <div class="line"></div>
     `;
+    
 
     itemsBox.appendChild(line);
   });
 
   renderSummary();
+  updateMenuButtons();
+
 }
+function updateMenuButtons() {
+  document.querySelectorAll(".dishes_btn").forEach(btn => {
+    const match = btn.getAttribute("onclick").match(/addItem\('(.+?)'\)/);
+    const id = match ? match[1] : null;
+    const item = cart.find(i => i.id === id);
+    btn.innerHTML = item ? item.qty : "+";
+  });
+}
+
 
 // lieferung
 function setDelivery(isDelivery) {

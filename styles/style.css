@@ -81,9 +81,12 @@ p {
     padding: 8px;
     font-size: 22px;
     cursor: pointer;
-
-
 }
+
+.btn {
+    cursor: pointer;
+}
+
 
 .main_dishes {
     object-position: 10% 75% !important;
@@ -138,6 +141,8 @@ p {
 
 .cart-items {
     text-align: start;
+    height: 250px;
+    overflow-x: auto;
 
 }
 
@@ -159,6 +164,7 @@ span {
 
 .orange {
     color: #FF8000;
+    cursor: pointer;
 }
 
 .icon_btn {
@@ -210,25 +216,27 @@ strong {
 }
 
 .order_message {
-  display: none;        
-  font-weight: bold;
-  margin-top: 10px;
-  transition: opacity 0.3s ease;
+    display: none;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: opacity 0.3s ease;
 }
 
 .order_message.show_2 {
-  display: block;       
-  opacity: 1;
+    display: block;
+    opacity: 1;
 }
 
-.show_2{
+.show_2 {
     margin-top: 20px;
     text-align: center;
 }
-.close_cart{
+
+.close_cart {
     display: none;
 }
-.cart{
+
+.cart {
     position: fixed;
     margin-left: 40px;
 }

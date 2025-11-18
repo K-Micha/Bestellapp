@@ -16,20 +16,20 @@
 </head>
 
 <body>
-    <header class="header_content">
+    <header class="header_content" aria-label="Kopfbereich">
 
         <a href="/index.html">
             <img class="app-logo" src="/assets/logo/Bestell-App-Logo.svg" alt="Das Logo der Bestell App">
         </a>
 
-        <button class="ham_menu" onclick="openMenu()"">
+        <button class="ham_menu" onclick="openMenu() ">
         <span></span>
         <span></span>
         <span></span>
     </button>
 
 
-    <div id=" overlay" class="overlay"></div>
+    <div id="overlay" class="overlay"></div>
 
             <aside id="side_menu" class="side_menu">
                 <button class="close_menu" onclick="closeMenu()">X</button>
@@ -65,14 +65,14 @@
                     <section class="dishes">
                         <div class="dishes_label">
                             <span class="arrow">></span>
-                            <a class="dishes_link" href="#main_dishes">Hauptgericht</a>
-                            <a class="dishes_link" href="#dishes_scroll">Beilagen</a>
-                            <a class="dishes_link" href="#drink_scroll">Getränke</a>
+                            <a class="dishes_link" aria-label="Hauptgericht" href="#main_dishes">Hauptgericht</a>
+                            <a class="dishes_link" aria-label="Beilage" href="#dishes_scroll">Beilagen</a>
+                            <a class="dishes_link" aria-label="Getrenk" href="#drink_scroll">Getränke</a>
 
                         </div>
                     </section>
 
-                    <section>
+                    <section aria-label="Hauptgerichte">
                         <img class="hero_img main_dishes hight_img"
                             src="/assets/bilder/istockphoto-1143191956-612x612.jpg" alt="Bild vom Hauptgericht">
                         <h2 id="main_scroll">Hauptgericht</h2>
@@ -87,14 +87,14 @@
 
                     </section>
 
-                    <section>
+                    <section aria-label="Beilagen">
                         <img class="hero_img hight_img" src="/assets/bilder/harira.webp" alt="Bild von Beilage">
                         <h2 id="dishes_scroll">Beilagen</h2>
                         <div id="slide_dishes"></div>
 
                     </section>
 
-                    <section>
+                    <section aria-label="Getränke">
                         <img class="hero_img hight_img" src="/assets/bilder/tee.avif" alt="Bild vom Getrenk">
                         <h2 id="drink_scroll">Getränke</h2>
                         <div id="drinks"></div>
@@ -110,18 +110,18 @@
 
             <section class="basket_right">
                 <div class="basket">
-
+                    <div class="position">
                     <div class="order-group">
                         <button onclick="closeCart()" id="close_cart" class="close_cart">X</button>
                         <button id="btn-lieferung" class="order-btn" onclick="setDelivery(true)">Abholung</button>
                         <button id="btn-abholung" class="order-btn" onclick="setDelivery(false)">Lieferung</button>
                     </div>
 
-                    <section id="cart" class="cart">
+                    <section id="cart" class="cart" aria-label="Warenkorb">
                         <h2> Warenkorb </h2>
                         <div class="line_2"></div>
 
-                        <div class="cart-items">
+                        <div class="cart-items" aria-label="warenkorb inhalt">
                             <p id="item_name" class="item_name"></p>
                             <div class="cart-controls">
                                 <button class="minus orange icon_btn none" id="item1-minus">−</button>
@@ -134,26 +134,26 @@
 
                         </div>
 
-                        <div class="cart-summary">
+                        <div class="cart-summary" aria-label="Zwischensumme">
                             <div class="flex">
                                 <p id="subtotal">Zwischensumme</p>
                                 <p id="subtotal_summe"></p>
                             </div>
 
-                            <div class="flex">
+                            <div class="flex" aria-label="Lieferkosten">
                                 <p id="delivery">Lieferkosten</p>
                                 <p id="delivery_summe"></p>
                             </div>
 
-                            <div class="flex">
+                            <div class="flex" aria-label="Gesamtpreis">
                                 <p id="total"><strong>Gesamt</strong></p>
                                 <p id="total_summe"><strong></strong></p>
                             </div>
                         </div>
                         <div class="line line_2"></div>
-                        <button class="btn" onclick="finalizeOrder()">Bestellen</button>
+                        <button class="btn" aria-label="Bestell button" onclick="finalizeOrder()">Bestellen</button>
                         <p id="order_message" class="order_message"></p>
-
+                        </div>
                     </section>
                 </div>
 
@@ -164,8 +164,8 @@
     </main>
     <footer>
 
-        <a class="link_footer" href="/html/impressum.html">Impressum</a>
-        <a class="link_footer" href="/html/datenschutz.html">Datenschutz</a>
+        <a class="link_footer" aria-label="impressum" href="/html/impressum.html">Impressum</a>
+        <a class="link_footer" aria-label="datenschutz" href="/html/datenschutz.html">Datenschutz</a>
 
         <div class="copyright">
             <p>@2025 Copyright M.Kühn</p>

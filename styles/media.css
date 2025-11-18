@@ -16,6 +16,7 @@
         flex-direction: column;
         align-items: center;
         top: 120vh;
+        display: block;
     }
 
     .basket.show {
@@ -49,9 +50,10 @@
 
     .mobile_cart_btn {
         display: block;
+        margin-top: 80px;
 
+    
     }
-
     .btn_order {
         position: fixed;
         top: 80vh;
@@ -89,8 +91,17 @@
 }
 .order-group{
     margin-top: 40px;
+   
 }
 .order_message{
     text-align: center;
 }
+.overlay{
+    display: none;
+}
+}
+@media (max-width: 850px) {
+    .logo{
+        height: 70px;
+    }
 }
