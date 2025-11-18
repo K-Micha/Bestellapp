@@ -132,6 +132,7 @@ a {
 }
 
 @media (max-width: 850px) {
+
     .logo {
         height: 70px;
     }
