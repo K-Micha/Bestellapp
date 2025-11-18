@@ -79,7 +79,7 @@ function renderCategory(list, containerId) {
     const card = document.createElement("article");
     card.classList.add("dishes_container");
 
- card.innerHTML = `
+    card.innerHTML = `
   <button onclick="
     addItem('${dish.id}');
     updateMenuButtons();
@@ -113,7 +113,7 @@ function addItem(id) {
   } else {
     cart.push({ id: dish.id, name: dish.name, price: dish.price, qty: 1 });
   }
-  
+
   renderCart();
   updateMenuButtons();
 
@@ -163,7 +163,7 @@ function renderCart() {
       </div>
       <div class="line"></div>
     `;
-    
+
 
     itemsBox.appendChild(line);
   });

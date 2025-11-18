@@ -20,10 +20,10 @@ function openMenu() {
 function closeMenu() {
     document.getElementById("side_menu").classList.remove("show");
     document.getElementById("overlay").classList.remove("show");
-    
+
 }
 document.querySelectorAll("#side_menu .menu_nav a")
-  .forEach(link => link.addEventListener("click", closeMenu));
+    .forEach(link => link.addEventListener("click", closeMenu));
 
 
 // Mobiler Warenkorb

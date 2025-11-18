@@ -168,12 +168,12 @@ nav a {
 
 .order-btn.active {
     display: none;
-    
+
 }
 
 .order_left {
-  display: none;
-  box-shadow: 1px 1px 7px 1px #9E9E9E;
+    display: none;
+    box-shadow: 1px 1px 7px 1px #9E9E9E;
 }
 
 .order_right {

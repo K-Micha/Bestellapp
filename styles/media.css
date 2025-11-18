@@ -33,9 +33,11 @@
         margin-right: 10px;
         height: 100vh;
     }
-    h2{
+
+    h2 {
         margin-top: 100px;
     }
+
     .btn {
         padding: 15px;
         box-shadow: 1px 1px 4px 1px black;
@@ -52,8 +54,9 @@
         display: block;
         margin-top: 80px;
 
-    
+
     }
+
     .btn_order {
         position: fixed;
         top: 80vh;
@@ -80,28 +83,61 @@
         align-items: center;
         position: fixed;
     }
-    .logo{
+
+    .logo {
         height: 60px;
     }
 
-.close_cart{
-    z-index: 1;
-    display: block;
-    margin-right: 30px;
+    .close_cart {
+        z-index: 1;
+        display: block;
+        margin-right: 30px;
+    }
+
+    .order-group {
+        margin-top: 40px;
+
+    }
+
+    .order_message {
+        text-align: center;
+    }
+
+    .overlay {
+        display: none;
+    }
+
+    h1 {
+        font-size: 32px !important;
+    }
+
+    h2 {
+
+        font-size: 28px !important;
+    }
+
+    h3 {
+        font-size: 22px !important;
+    }
+
+    p,
+    span,
+    {
+    font-size: 18px !important;
 }
-.order-group{
-    margin-top: 40px;
-   
-}
-.order_message{
-    text-align: center;
-}
-.overlay{
-    display: none;
+
+a {
+    font-size: 14px !important;
 }
 }
+
 @media (max-width: 850px) {
-    .logo{
+    .logo {
         height: 70px;
+    }
+
+    .dishes_btn {
+        text-align: center;
+        font-size: 40px;
     }
 }

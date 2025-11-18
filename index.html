@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/styles/assets.css">
     <link rel="stylesheet" href="/styles/hover.css">
     <link rel="stylesheet" href="/styles/media.css">
+    <link rel="stylesheet" href="/assets/fonts/Raleway-Italic-VariableFont_wght.ttf">
     <script src="/scripts/menu.js" defer></script>
     <script src="/scripts/script.js" defer></script>
     <title>Bestellapp</title>
@@ -23,25 +24,25 @@
         </a>
 
         <button class="ham_menu" onclick="openMenu() ">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
 
-    <div id="overlay" class="overlay"></div>
+        <div id="overlay" class="overlay"></div>
 
-            <aside id="side_menu" class="side_menu">
-                <button class="close_menu" onclick="closeMenu()">X</button>
+        <aside id="side_menu" class="side_menu">
+            <button class="close_menu" onclick="closeMenu()">X</button>
 
-                <nav class="menu_nav">
-                    <a href="#" class="close">Login</a>
-                    <a href="#main_dishes" class="close">Hauptgerichte</a>
-                    <a href="#dishes_scroll" class="close">Beilagen</a>
-                    <a href="#drink_scroll" class="close">Getränke</a>
+            <nav class="menu_nav">
+                <a href="#" class="close">Login</a>
+                <a href="#main_dishes" class="close">Hauptgerichte</a>
+                <a href="#dishes_scroll" class="close">Beilagen</a>
+                <a href="#drink_scroll" class="close">Getränke</a>
 
-                </nav>
-            </aside>
+            </nav>
+        </aside>
     </header>
 
     <main>
@@ -111,53 +112,53 @@
             <section class="basket_right">
                 <div class="basket">
                     <div class="position">
-                    <div class="order-group">
-                        <button onclick="closeCart()" id="close_cart" class="close_cart">X</button>
-                        <button id="btn-lieferung" class="order-btn" onclick="setDelivery(true)">Abholung</button>
-                        <button id="btn-abholung" class="order-btn" onclick="setDelivery(false)">Lieferung</button>
+                        <div class="order-group">
+                            <button onclick="closeCart()" id="close_cart" class="close_cart">X</button>
+                            <button id="btn-lieferung" class="order-btn" onclick="setDelivery(true)">Abholung</button>
+                            <button id="btn-abholung" class="order-btn" onclick="setDelivery(false)">Lieferung</button>
+                        </div>
+
+                        <section id="cart" class="cart" aria-label="Warenkorb">
+                            <h2> Warenkorb </h2>
+                            <div class="line_2"></div>
+
+                            <div class="cart-items" aria-label="warenkorb inhalt">
+                                <p id="item_name" class="item_name"></p>
+                                <div class="cart-controls">
+                                    <button class="minus orange icon_btn none" id="item1-minus">−</button>
+                                    <span id="item1-qty"></span>
+                                    <button class="plus orange icon_btn none" id="item1-plus">+</button>
+                                    <p id="item1-sum" class="item-sum"></p>
+                                    <button class="remove orange icon_btn none" id="item1-remove">🗑️</button>
+                                </div>
+
+
+                            </div>
+
+                            <div class="cart-summary" aria-label="Zwischensumme">
+                                <div class="flex">
+                                    <p id="subtotal">Zwischensumme</p>
+                                    <p id="subtotal_summe"></p>
+                                </div>
+
+                                <div class="flex" aria-label="Lieferkosten">
+                                    <p id="delivery">Lieferkosten</p>
+                                    <p id="delivery_summe"></p>
+                                </div>
+
+                                <div class="flex" aria-label="Gesamtpreis">
+                                    <p id="total"><strong>Gesamt</strong></p>
+                                    <p id="total_summe"><strong></strong></p>
+                                </div>
+                            </div>
+                            <div class="line line_2"></div>
+                            <button class="btn" aria-label="Bestell button" onclick="finalizeOrder()">Bestellen</button>
+                            <p id="order_message" class="order_message"></p>
                     </div>
-
-                    <section id="cart" class="cart" aria-label="Warenkorb">
-                        <h2> Warenkorb </h2>
-                        <div class="line_2"></div>
-
-                        <div class="cart-items" aria-label="warenkorb inhalt">
-                            <p id="item_name" class="item_name"></p>
-                            <div class="cart-controls">
-                                <button class="minus orange icon_btn none" id="item1-minus">−</button>
-                                <span id="item1-qty"></span>
-                                <button class="plus orange icon_btn none" id="item1-plus">+</button>
-                                <p id="item1-sum" class="item-sum"></p>
-                                <button class="remove orange icon_btn none" id="item1-remove">🗑️</button>
-                            </div>
-
-
-                        </div>
-
-                        <div class="cart-summary" aria-label="Zwischensumme">
-                            <div class="flex">
-                                <p id="subtotal">Zwischensumme</p>
-                                <p id="subtotal_summe"></p>
-                            </div>
-
-                            <div class="flex" aria-label="Lieferkosten">
-                                <p id="delivery">Lieferkosten</p>
-                                <p id="delivery_summe"></p>
-                            </div>
-
-                            <div class="flex" aria-label="Gesamtpreis">
-                                <p id="total"><strong>Gesamt</strong></p>
-                                <p id="total_summe"><strong></strong></p>
-                            </div>
-                        </div>
-                        <div class="line line_2"></div>
-                        <button class="btn" aria-label="Bestell button" onclick="finalizeOrder()">Bestellen</button>
-                        <p id="order_message" class="order_message"></p>
-                        </div>
-                    </section>
-                </div>
-
             </section>
+        </div>
+
+        </section>
         </div>
         </div>
 
