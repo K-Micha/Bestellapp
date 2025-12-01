@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/Icons/favicon.ico" />
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/basic.css">
+    <link rel="stylesheet" href="./styles/assets.css">
+    <link rel="stylesheet" href="./styles/media.css">
+    <link rel="stylesheet" href="./styles/bilder.css">
+    <script src="/scripts/db.js" defer></script>
+    <script src="/scripts/cart.js" defer></script>
+    <script src="/scripts/script.js" defer></script>
+    <title>Bestellapp</title>
+</head>
+
+<body>
+    <header class="header_content" aria-label="Kopfbereich">
+
+        <div class="header_container">
+
+
+            <a href="/index.html">
+                <img class="app_logo" src="/assets/logo/Bestell-App-Logo.svg" alt="Das Logo der Bestell App">
+            </a>
+
+            <button class="ham_menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+    </header>
+    <div class="wapper_menu">
+        <div id="sideMenu" class="menu_panel">
+            <nav class="menu_nav">
+                <div class="nav_interface">
+                    <a onclick="scrollToSection('')" class="close">Login</a>
+                    <a onclick="scrollToSection('main_dishes')" class="close">Hauptgerichte</a>
+                    <a onclick="scrollToSection('main_dishes')" class="close">Beilagen</a>
+                    <a onclick="scrollToSection('main_dishes')">Getränke</a>
+                </div>
+            </nav>
+        </div>
+    </div>
+    </div>
+
+    <main>
+        <div class="content">
+
+            <section class="main_content">
+                <div class="hero">
+                    <div>
+                        <img class="hero_img" src="/assets/bilder/istockphoto-1143191956-612x612.jpg"
+                            alt="Resturant bild">
+                    </div>
+
+                    <div class="logo_wrapper">
+                        <img class="logo" src="/assets/bilder/togo.png" alt="">
+                    </div>
+                </div>
+                <div>
+                    <h1>Tajine House</h1>
+                    <p class="vote">Bewertung 4,8/5</p>
+
+                    <section class="dishes">
+                        <span class="arrow">></span>
+                        <a class="dishes_link"
+                            onclick="document.getElementById('main_dishes').scrollIntoView({behavior:'smooth'})">Hauptgericht</a>
+                        <a class="dishes_link"
+                            onclick="document.getElementById('slide_dishes').scrollIntoView({behavior:'smooth'})">Beilagen</a>
+                        <a class="dishes_link"
+                            onclick="document.getElementById('drinks').scrollIntoView({behavior:'smooth'})">Getränke</a>
+
+                    </section>
+
+                    <section>
+                        <img class="hero_img main_dishes hight_img"
+                            src="/assets/bilder/istockphoto-1143191956-612x612.jpg" alt="Bild vom Hauptgericht">
+                        <h2>Hauptgericht</h2>
+
+                        <div class="dishes_container contents" id="main_dishes">
+
+
+
+                        </div>
+                    </section>
+
+                    <section>
+                        <img class="hero_img hight_img" src="/assets/bilder/harira.webp" alt="Bild von Beilage">
+                        <h2>Beilagen</h2>
+                        <div class="dishes_container contents" id="slide_dishes">
+
+
+                        </div>
+                    </section>
+
+                    <section>
+                        <img class="hero_img hight_img" src="/assets/bilder/tee.avif" alt="Bild vom Getrenk">
+                        <h2>Getränke</h2>
+                        <div class="dishes_container contents" id="drinks">
+
+                        </div>
+                    </section>
+                    <div class="open_cart_div">
+                        <button onclick="openCart()" class="open_cart" id="open_cart">Warenkorb öffnen</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="basket">
+
+                <aside class="cart_panel" id="cart_sheet">
+                    <header class="cart_header">
+
+                        <div id="order_mode_btn">
+                            <span id="order_mode"></span>
+                        </div>
+                        <h2> Warenkorb </h2>
+                        <button class="close_btn btn" id="cart_close" onclick="cartClose()">Warenkorb schließen</button>
+                    </header>
+
+                    <div class="space_1">
+                        <div class="underline"></div>
+                    </div>
+
+                    <div class="item_cart" aria-label="warenkorb inhalt">
+
+                        <p id="item_name" class="item_name"></p>
+                    </div>
+
+                    <div class="cart_controls">
+
+
+                        <footer>
+                            <div class="cart_summary" aria-label="Zwischensumme">
+
+                                <div class="flex">
+                                    <p id="subtotal">Zwischensumme</p>
+                                    <p id="subtotal_summe"></p>
+                                </div>
+
+                                <div class="flex" aria-label="Lieferkosten">
+                                    <p id="delivery">Lieferkosten </p>
+                                    <p id="delivery_summe"></p>
+                                </div>
+
+                                <div class="flex" aria-label="Gesamtpreis">
+                                    <p id="total"><strong>Gesamt</strong></p>
+                                    <p id="total_summe"><strong></strong></p>
+                                </div>
+                            </div>
+                            <div class="space_2">
+                                <div class="underline"></div>
+                            </div>
+                            <div class="order_btn">
+                                <button class="btn order_btn" aria-label="Bestell button"
+                                    onclick="finalizeOrder()">Bestellen</button>
+                                <p id="order_message" class="order_message"></p>
+                            </div>
+                        </footer>
+
+                </aside>
+
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="max"></div>
+        <div class="footer_container">
+
+            <a class="link_footer" aria-label="impressum" href="/html/impressum.html">Impressum</a>
+            <a class="link_footer" aria-label="datenschutz" href="/html/datenschutz.html">Datenschutz</a>
+
+            <div class="copyright">
+                <p>@2025 Copyright M.Kühn</p>
+                <img src="/assets/Icons/favicon-32x32.png" alt="Bestell-App-Logo">
+            </div>
+        </div>
+        </div>
+    </footer>
+</body>
+
+</html>
